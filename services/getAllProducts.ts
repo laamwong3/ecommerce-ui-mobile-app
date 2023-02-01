@@ -1,4 +1,4 @@
-import { Products } from "../types/services";
+import { Products } from "../types/types";
 
 export const getAllProducts = async () => {
   const url = "https://fakestoreapi.com/products";

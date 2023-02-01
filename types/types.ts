@@ -19,3 +19,12 @@ interface Rating {
   rate: number;
   count: number;
 }
+
+export interface ProductCardProps {
+  item: Products;
+  index: number;
+  setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export type DetailsCardProps = Pick<ProductCardProps, "item">;

@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "react-native-paper";
 import ColorMode, { useColorMode } from "./contexts/ColorMode";
-import ProductList from "./screens/ProductList";
+import ProductList from "./components/ProductList";
 import { darkTheme } from "./themes/dark";
 import { lightTheme } from "./themes/light";
 
