@@ -1,3 +1,5 @@
+import { BottomSheetModalMethods } from "@gorhom/bottom-sheet/lib/typescript/types";
+
 export interface Products {
   id: number;
   title: string;
@@ -24,7 +26,10 @@ export interface ProductCardProps {
   item: Products;
   index: number;
   setSelectedIndex: React.Dispatch<React.SetStateAction<number>>;
-  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  bottomSheetModalRef: React.RefObject<BottomSheetModalMethods>;
+  // setIsSnackbarVisible?: React.Dispatch<React.SetStateAction<boolean>>;
+  // handlePresentModalPress: () => void;
+  // setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export type DetailsCardProps = Pick<ProductCardProps, "item">;

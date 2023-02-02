@@ -19,15 +19,19 @@ const ProductCard = ({
   item,
   index,
   setSelectedIndex,
-  setIsModalVisible,
-}: ProductCardProps) => {
+  bottomSheetModalRef,
+}: //   handlePresentModalPress,
+//   setIsModalVisible,
+ProductCardProps) => {
   return (
     <Card
       mode="contained"
       style={{ marginBottom: 16 }}
       onPress={() => {
         setSelectedIndex(index);
-        setIsModalVisible(true);
+        bottomSheetModalRef.current?.present();
+        // handlePresentModalPress;
+        // setIsModalVisible(true);
       }}
     >
       <Card.Cover
