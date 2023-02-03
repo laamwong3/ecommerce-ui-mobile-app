@@ -34,13 +34,17 @@ const DetailsCard = ({ item }: DetailsCardProps) => {
           visible={isSnackbarVisible}
           onDismiss={() => setIsSnackbarVisible(false)}
           duration={5000}
+          action={{
+            label: "close",
+            onPress: () => setIsSnackbarVisible(false),
+          }}
         >
           Quantity cannot be less than 1
         </Snackbar>
       </Portal>
       <Card
         mode="contained"
-        style={{ marginBottom: 16, height: "100%" }}
+        style={{ marginBottom: 16 }}
         //   onPress={() => setSelectedIndex(index)}
       >
         {/* <Image
@@ -94,7 +98,7 @@ const DetailsCard = ({ item }: DetailsCardProps) => {
           >
             {item.description}
           </Text>
-          <View style={{ ...styles.selectQuantity }}>
+          <View style={{ ...styles.selectQuantity, marginBottom: 8 }}>
             <View style={{ ...styles.control }}>
               <TouchableOpacity onPress={handleMinusQuantity}>
                 <IconButton icon={"minus-circle-outline"} size={32} />
@@ -113,9 +117,17 @@ const DetailsCard = ({ item }: DetailsCardProps) => {
                 color: theme.colors.tertiary,
               }}
             >
-              ${item.price}
+              ${(item.price * quantity).toFixed(2)}
             </Text>
           </View>
+          <TouchableOpacity>
+            <Button
+              style={{ width: "100%", marginBottom: 8 }}
+              mode={"contained"}
+            >
+              Add to cart
+            </Button>
+          </TouchableOpacity>
         </Card.Content>
       </Card>
     </>

@@ -40,7 +40,7 @@ const ProductList = () => {
   const theme = useTheme();
 
   const bottomSheetModalRef = useRef<BottomSheetModal>(null);
-  const snapPoints = useMemo(() => ["90%"], []);
+  const snapPoints = useMemo(() => ["77.5%"], []);
   const handlePresentModalPress = useCallback(() => {
     bottomSheetModalRef.current?.present();
   }, []);
@@ -80,7 +80,7 @@ const ProductList = () => {
         />
 
         <BottomSheetModal
-          containerStyle={{ backgroundColor: theme.colors.backdrop }}
+          // containerStyle={{ backgroundColor: theme.colors.backdrop }}
           backgroundStyle={{
             backgroundColor: theme.colors.background,
             borderRadius: 16,
